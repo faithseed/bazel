@@ -31,7 +31,12 @@ new_git_repository(
 )
 
 # Go is required to generate some parts of BoringSSL
-load("@bazel_tools//tools/build_rules/go:def.bzl", "go_repositories")
+git_repository(
+    name = "io_bazel_rules_go",
+    remote = "https://github.com/bazelbuild/rules_go.git",
+    tag = "0.0.4",
+)
+load("@io_bazel_rules_go//go:def.bzl", "go_repositories")
 go_repositories()
 
 bind(
