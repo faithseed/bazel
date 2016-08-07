@@ -56,3 +56,10 @@ bind(
     name = 'zlib',
     actual = '@zlib_repo//:zlib',
 )
+
+# gflags
+git_repository(
+    name = 'gflags',
+    remote = 'https://github.com/gflags/gflags.git',
+    commit = 'a69b2544d613b4bee404988710503720c487119a',
+)
