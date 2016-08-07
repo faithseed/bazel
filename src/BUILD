@@ -6,7 +6,7 @@ cc_binary(
     deps = [
         ':helloworld_proto',
         '@grpc//:grpc++',
-	'@gflags//:gflags',
+        '@gflags//:gflags',
     ],
     linkopts = ['-ldl'],
 )
@@ -17,7 +17,7 @@ cc_binary(
     deps = [
         ':helloworld_proto',
         '@grpc//:grpc++',
-	'@gflags//:gflags',
+        '@gflags//:gflags',
     ],
     linkopts = ['-ldl'],
 )
