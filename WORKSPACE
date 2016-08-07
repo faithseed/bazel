@@ -63,3 +63,11 @@ git_repository(
     remote = 'https://github.com/gflags/gflags.git',
     commit = 'a69b2544d613b4bee404988710503720c487119a',
 )
+
+# libunwind
+new_git_repository(
+    name = 'libunwind',
+    remote = 'git@github.com:faithseed/libunwind.git',
+    commit = 'd2201790d8b7dd57617d9ef005acd676f85bac77',
+    build_file = 'BUILD.libunwind',
+)
