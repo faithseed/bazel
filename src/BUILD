@@ -50,3 +50,18 @@ cc_test(
     "//third_party/gtest:gtest_main",
   ],
 )
+
+cc_test(
+  name = "btree_test",
+  copts = [ "-fpermissive" ],
+  srcs = [
+    "btree_test.cc",
+    "btree_test.h",
+    "btree_test_flags.cc",
+  ],
+  deps = [
+    "//third_party/gtest:gtest_main",
+    "//third_party/btree:btree",
+    "//third_party/gflags:gflags",
+  ],
+)
