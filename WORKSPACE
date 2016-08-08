@@ -64,18 +64,3 @@ git_repository(
     commit = 'a69b2544d613b4bee404988710503720c487119a',
 )
 
-# libunwind
-new_git_repository(
-    name = 'libunwind',
-    remote = 'git@github.com:faithseed/libunwind.git',
-    commit = 'd2201790d8b7dd57617d9ef005acd676f85bac77',
-    build_file = 'BUILD.libunwind',
-)
-
-# glog
-new_git_repository(
-    name = 'glog',
-    remote = 'git@github.com:faithseed/glog.git',
-    commit = '334224fef0f084bb3f7f3b71b11489b7b0a2d9be',
-    build_file = 'BUILD.glog',
-)
