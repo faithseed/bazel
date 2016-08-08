@@ -36,6 +36,8 @@
 #include <string>
 
 #include <grpc++/grpc++.h>
+#include <gflags/gflags.h>
+#include <glog/logging.h>
 
 #include "src/helloworld.grpc.pb.h"
 
@@ -69,7 +71,7 @@ void RunServer() {
   builder.RegisterService(&service);
   // Finally assemble the server.
   std::unique_ptr<Server> server(builder.BuildAndStart());
-  std::cout << "Server listening on " << server_address << std::endl;
+  LOG(INFO) << "Server listening on " << server_address;
 
   // Wait for the server to shutdown. Note that some other thread must be
   // responsible for shutting down the server for this call to ever return.
@@ -77,6 +79,9 @@ void RunServer() {
 }
 
 int main(int argc, char** argv) {
+  google::InitGoogleLogging(argv[0]);
+  google::SetUsageMessage("Server");
+  google::ParseCommandLineFlags(&argc, &argv, false);
   RunServer();
 
   return 0;

@@ -37,6 +37,7 @@
 
 #include <grpc++/grpc++.h>
 #include <gflags/gflags.h>
+#include <glog/logging.h>
 
 #include "src/helloworld.grpc.pb.h"
 
@@ -82,8 +83,9 @@ class GreeterClient {
 };
 
 int main(int argc, char** argv) {
-  gflags::SetUsageMessage("Client");
-  gflags::ParseCommandLineFlags(&argc, &argv, false);
+  google::InitGoogleLogging(argv[0]);
+  google::SetUsageMessage("Client");
+  google::ParseCommandLineFlags(&argc, &argv, false);
   // Instantiate the client. It requires a channel, out of which the actual RPCs
   // are created. This channel models a connection to an endpoint (in this case,
   // localhost at port 50051). We indicate that the channel isn't authenticated
@@ -92,7 +94,7 @@ int main(int argc, char** argv) {
       grpc::CreateChannel("localhost:50051", grpc::InsecureChannelCredentials()));
   std::string user("world");
   std::string reply = greeter.SayHello(user);
-  std::cout << "Greeter received: " << reply << std::endl;
+  LOG(INFO) << "Greeter received: " << reply;
 
   return 0;
 }
