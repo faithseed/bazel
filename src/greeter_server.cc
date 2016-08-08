@@ -80,8 +80,8 @@ void RunServer() {
 
 int main(int argc, char** argv) {
   google::InitGoogleLogging(argv[0]);
-  google::SetUsageMessage("Server");
-  google::ParseCommandLineFlags(&argc, &argv, false);
+  gflags::SetUsageMessage("Server");
+  gflags::ParseCommandLineFlags(&argc, &argv, false);
   RunServer();
 
   return 0;

@@ -84,8 +84,8 @@ class GreeterClient {
 
 int main(int argc, char** argv) {
   google::InitGoogleLogging(argv[0]);
-  google::SetUsageMessage("Client");
-  google::ParseCommandLineFlags(&argc, &argv, false);
+  gflags::SetUsageMessage("Client");
+  gflags::ParseCommandLineFlags(&argc, &argv, false);
   // Instantiate the client. It requires a channel, out of which the actual RPCs
   // are created. This channel models a connection to an endpoint (in this case,
   // localhost at port 50051). We indicate that the channel isn't authenticated
