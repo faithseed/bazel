@@ -71,3 +71,11 @@ new_git_repository(
     commit = 'd2201790d8b7dd57617d9ef005acd676f85bac77',
     build_file = 'BUILD.libunwind',
 )
+
+# glog
+new_git_repository(
+    name = 'glog',
+    remote = 'git@github.com:faithseed/glog.git',
+    commit = '334224fef0f084bb3f7f3b71b11489b7b0a2d9be',
+    build_file = 'BUILD.glog',
+)
