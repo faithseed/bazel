@@ -8,4 +8,3 @@ import (
 func main() {
 	fmt.Println("My favorite number is", math.Pi)
 }
-
